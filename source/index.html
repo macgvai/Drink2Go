@@ -2,12 +2,62 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Название проекта</title>
+    <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
-    <header class="header">Шапка</header>
+    <header class="page-header">
+      <div class="page-header__logo-wrapper">
+        <a href="#" class="page-header__logo">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="img/logo-desktop.svg" width="170" height="36">
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.svg" width="82" height="36">
+              <img class="page-header__logo-image" src="img/logo-mobile.svg" width="32" height="36" alt="Drink2Go">
+          </picture>
+          <h1 class="page-header__logo-text">Интернет-магазин кофейных напитков</h1>
+        </a>
+      </div>
+      <div class="page-header__account">
+        <div class="page-header__account-user">
+          <a href="#" class="page-header__account-user-link">
+            <svg class="page-header__account-user-icon">
+              <use xlink:href="img/icons/stack.svg#user"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="page-header__account-cart">
+          <a href="#" class="page-header__account-user-cart">
+            <svg class="page-header__account-user-cart">
+              <use xlink:href="img/icons/stack.svg#cart"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav main-nav--opened main-nav--nojs">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list">
+            <li class="main-nav__item main-nav__item--current">
+              <a class="main-nav__item-link" href="">главная</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link" href="catalog.html">каталог</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link" href="form.html">доставка</a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link" href="form.html">о нас</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="page-main"></main>
+    <footer class="page-footer"></footer>
 
     <script src="./js/script.js" defer></script>
   </body>
