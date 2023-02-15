@@ -1,18 +1,82 @@
 .main-nav {
   @media (min-width: @tablet-width) {
-    width: 440px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-left: 67px;
   }
   @media (min-width: @desktop-width) {
     width: 479px;
+    margin-left: 162px;
+  }
+}
+
+.main-nav__account {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 76px;
+  position: absolute;
+  top: 22px;
+  right: 82px;
+  @media (min-width: @tablet-width) {
+    position: relative;
+    order: 1;
+    top: 0;
+    right: 0;
+    width: 76px;
+    margin-right: 40px;
+  }
+  @media (min-width: @desktop-width) {
+    width: 261px;
+    margin-right: 0;
+  }
+}
+.main-nav__account-user {
+}
+.main-nav__account-user-link,
+.main-nav__account-user-cart-link {
+  @media (min-width: @tablet-width) {
+    display: flex;
+    padding: 32px 20px;
+  }
+}
+.main-nav__account-cart {
+}
+
+.main-nav__account-user-descr,
+.main-nav__account-user-cart-descr {
+  display: none;
+  @media (min-width: @desktop-width) {
+    display: block;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: @base-black;
+    margin-left: 8px;
+  }
+}
+
+
+.main-nav__account-user-icon,
+.main-nav__account-user-cart-icon {
+  fill: @base-black;
+  width: 16px;
+  height: 16px;
+  &:hover,
+  &:focus {
+    fill: @base-primary;
   }
 }
 
 .main-nav__toggle {
   position: absolute;
-  top: 19px;
-  right: 0;
-  width: 23px;
-  height: 22px;
+  top: 25px;
+  right: 22px;
+  width: 16px;
+  height: 16px;
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -31,10 +95,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 23px;
-    height: 2px;
-    background-color: @base-black;
-    box-shadow: 0 8px 0 0 @base-black, 0 16px 0 0 @base-black;
+    width: 16px;
+    height: 1px;
+    background-color: #333;
+    box-shadow: 0 5px 0 0#333,0 10px 0 0#333;
   }
 }
 
@@ -43,10 +107,10 @@
   &::after {
     content: "";
     position: absolute;
-    top: 10px;
-    left: -1px;
-    width: 24.76px;
-    height: 2px;
+    top: 6px;
+    left: 0px;
+    width: 16px;
+    height: 1px;
     background-color: @base-black;
   }
   &::before {
@@ -57,13 +121,25 @@
   }
 }
 
+.main-nav__wrapper {
+  @media (min-width: @tablet-width) {
+    min-width: 399px;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .main-nav__list {
   list-style: none;
   margin: 0;
   padding: 0;
   @media (min-width: @tablet-width) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+  }
+  @media (min-width: @desktop-width) {
+    width: 459px;
   }
 }
 
@@ -82,11 +158,12 @@
   display: block;
   padding: 22px;
   padding-top: 21px;
+  font-family: 'Montserrat';
   font-weight: 500;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 16px;
   text-transform: uppercase;
-  color: @base-black;
+  color: @base-primary;
   &:hover,
   &:focus-within {
     opacity: 0.8;
@@ -95,13 +172,16 @@
     opacity: 0.6;
   }
   @media (min-width: @tablet-width) {
-    padding: 0;
-    font-weight: 400;
-    font-size: 18px;
+    padding: 32px 21px;
+    font-weight: 500;
+    font-size: 12px;
   }
   @media (min-width: @desktop-width) {
     font-size: 20px;
-    color: @white;
+    color: @base-black;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
 
@@ -122,7 +202,7 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: -11px;
+      bottom: 0px;
       left: 0;
       width: 100%;
       height: 2px;
@@ -131,9 +211,8 @@
   }
   @media (min-width: @desktop-width) {
     border-color: @white;
-    &::after {
-      background-color: @white;
-      bottom: -14px;
+    .main-nav__item-link {
+      color: @base-primary;;
     }
   }
 }
