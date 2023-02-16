@@ -1,0 +1,62 @@
+.promo {
+  position: relative;
+  background-color: @flat-white;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(180deg, @flat-white 77%, transparent 50%);
+  }
+
+  @media (min-width: @desktop-width) {
+    background-color: @flat-white;
+    padding-bottom: 60px;
+  }
+}
+
+.promo__arrows .swiper-button-next {
+  position: absolute;
+  top: 328px;
+  right: 0;
+  background: url("../img/arrow-right.svg") no-repeat center;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  @media (min-width: @tablet-width) {
+    right: 30px;
+    top: 320px;
+  }
+
+  @media (min-width: @desktop-width) {
+    right: 30px;
+    top: 357px;
+  }
+}
+
+.promo__arrows .swiper-button-prev {
+  position: absolute;
+  top: 328px;
+  left: 0;
+  background: url("../img/arrow-left.svg") no-repeat center;
+  z-index: 1;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  @media (min-width: @tablet-width) {
+    left: 30px;
+    top: 320px;
+  }
+
+  @media (min-width: @desktop-width) {
+    right: 30px;
+    top: 357px;
+  }
+}
