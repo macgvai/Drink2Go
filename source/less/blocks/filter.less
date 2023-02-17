@@ -1,0 +1,44 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.noUi-target {
+  height: 4px;
+  background: @secondary-grey;
+}
+
+.noUi-connect {
+  background: @secondary-primary;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  right: -11px;
+  top: calc(50% - 24px/2 + 0.45px);
+  background: #FFFFFF;
+  border: 2px solid #9070EC;
+  border-radius: 50%;
+  &::before, &::after {
+    display: none;
+  }
+}
+
+
+.filter__range {
+  margin-bottom: 20px;
+}
+
+.filter__price-controls {
+  display: flex;
+  justify-content: space-between;
+}
+

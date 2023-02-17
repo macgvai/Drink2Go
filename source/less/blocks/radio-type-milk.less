@@ -1,0 +1,56 @@
+.radio-type-milk {
+  border: none;
+}
+.radio-type-milk__legend {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: @base-black;
+}
+.radio-type-milk___list {
+}
+.radio-type-milk___item {
+}
+.radio-type-milk__input {
+}
+.radio-type-milk__label {
+  position: relative;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: @base-black;
+  margin-left: 35px;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-type-milk__input +.radio-type-milk__label::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -31px;
+  width: 26px;
+  height: 26px;
+  background-image: url(../../img/radio-off.svg);
+  background-repeat: no-repeat;
+}
+.radio-type-milk__input:checked +.radio-type-milk__label::before {
+  content: "";
+  background-image: url(../../img/radio-on.svg);
+  background-repeat: no-repeat;
+}
+
+
+
+
+.radio-type-milk__input:hover + .radio-type-milk__label::before,
+.radio-type-milk__input:focus + .radio-type-milk__label::before {
+  opacity: 1;
+}
+
+.radio-type-milk__input:disabled + .radio-type-milk__label::before {
+  opacity: .5;
+}
