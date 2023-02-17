@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Drink2Go</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -214,137 +215,141 @@
           </ul>
         </div>
       </section>
-      <section class="catalog container">
-        <h2 class="catalog__title">Каталог</h2>
-        <p class="catalog__subtitle">Каталог кофейных напитков</p>
-        <section>
+      <section class="catalog">
+        <div class="container">
+            <div class="catalog__header">
+            <h2 class="catalog__title">Каталог</h2>
+            <p class="catalog__subtitle">Каталог кофейных напитков</p>
           </div>
-          <form class="filter" method="get" action="https://echo.htmlacademy.ru" >
-            <fieldset class="filter__price">
-              <legend class="filter__heading">Цена:</legend>
+          <section>
+            <h2 class="visually-hidden">фильтр товаров</h2>
+            <form class="filter" method="get" action="https://echo.htmlacademy.ru" >
+              <fieldset class="filter__price">
+                <legend class="filter__heading">Цена:</legend>
                 <div class="filter__range" id="slider"></div>
                   <div class="filter__price-controls">
                     <input class="filter__price-controls-input filter__price-controls-input--min" min="0" max="900" placeholder="0" type="number" value="0" id="input-0">
                     <span>—</span>
                     <input class="filter__price-controls-input filter__price-controls-input--max" min="0" max="900" placeholder="900" type="number" value="900" id="input-1">
                   </div>
-              </div>
-            </fieldset>
-            <fieldset class="radio-type-milk">
-              <legend class="radio-type-milk__legend">Наличие молока:</legend>
-                <ul class="radio-type-milk___list">
-                  <li class="radio-type-milk___item">
-                    <input class="radio-type-milk__input visually-hidden" id="no-matter" name="milk" type="radio" value="Не важно">
-                    <label class="radio-type-milk__label" for="no-matter">Неважно</label>
-                  </li>
-                  <li class="radio-type-milk___item">
-                    <input class="radio-type-milk__input visually-hidden" id="animal-only" name="milk" type="radio" value="Только животное">
-                    <label class="radio-type-milk__label" for="animal-only">Только животное</label>
-                  </li>
-                  <li class="radio-type-milk___item">
-                    <input class="radio-type-milk__input visually-hidden" id="only-vegetable"  name="milk" type="radio" value="Только растительное" checked>
-                    <label class="radio-type-milk__label" for="only-vegetable">Только растительное</label>
-                  </li>
-                  <li class="radio-type-milk___item">
-                    <input class="radio-type-milk__input visually-hidden" id="without-milk" name="milk" type="radio" value="Без молока" disabled>
-                    <label class="radio-type-milk__label" for="without-milk">Без молока</label>
-                  </li>
-                </ul>
-            </fieldset>
-            <fieldset class="radio-type-country">
-              <legend class="radio-type-country__legend">Страна произрастания</legend>
-                <ul class="radio-type-country___list">
-                  <li class="radio-type-country___item">
-                    <input class="radio-type-country__input visually-hidden" id="Brazil" name="country" type="checkbox" value="Бразилия">
-                    <label class="radio-type-country__label" for="Brazil">Бразилия</label>
-                  </li>
-                  <li class="radio-type-country___item">
-                    <input class="radio-type-country__input visually-hidden" id="ethiopia" name="country" type="checkbox" value="Эфиопия">
-                    <label class="radio-type-country__label" for="ethiopia">Эфиопия</label>
-                  </li>
-                  <li class="radio-type-country___item">
-                    <input class="radio-type-country__input visually-hidden" id="colombia"  name="country" type="checkbox" value="Колумбия" checked>
-                    <label class="radio-type-country__label" for="colombia">Колумбия</label>
-                  </li>
-                  <li class="radio-type-country___item">
-                    <input class="radio-type-country__input visually-hidden" id="costa-rica" name="country" type="checkbox" value="Коста-Рика">
-                    <label class="radio-type-country__label" for="costa-rica">Коста-Рика</label>
-                  </li>
-                  <li class="radio-type-country___item">
-                    <input class="radio-type-country__input visually-hidden" id="peru" name="country" type="checkbox" value="Перу" disabled>
-                    <label class="radio-type-country__label" for="peru">Перу</label>
-                  </li>
-                </ul>
-            </fieldset>
+              </fieldset>
+              <fieldset class="radio-type-milk">
+                <legend class="radio-type-milk__legend">Наличие молока:</legend>
+                  <ul class="radio-type-milk___list">
+                    <li class="radio-type-milk___item">
+                      <input class="radio-type-milk__input visually-hidden" id="no-matter" name="milk" type="radio" value="Не важно">
+                      <label class="radio-type-milk__label" for="no-matter">Неважно</label>
+                    </li>
+                    <li class="radio-type-milk___item">
+                      <input class="radio-type-milk__input visually-hidden" id="animal-only" name="milk" type="radio" value="Только животное">
+                      <label class="radio-type-milk__label" for="animal-only">Только животное</label>
+                    </li>
+                    <li class="radio-type-milk___item">
+                      <input class="radio-type-milk__input visually-hidden" id="only-vegetable"  name="milk" type="radio" value="Только растительное" checked>
+                      <label class="radio-type-milk__label" for="only-vegetable">Только растительное</label>
+                    </li>
+                    <li class="radio-type-milk___item">
+                      <input class="radio-type-milk__input visually-hidden" id="without-milk" name="milk" type="radio" value="Без молока" disabled>
+                      <label class="radio-type-milk__label" for="without-milk">Без молока</label>
+                    </li>
+                  </ul>
+              </fieldset>
+              <fieldset class="radio-type-country">
+                <legend class="radio-type-country__legend">Страна произрастания</legend>
+                  <ul class="radio-type-country___list">
+                    <li class="radio-type-country___item">
+                      <input class="radio-type-country__input visually-hidden" id="Brazil" name="country" type="checkbox" value="Бразилия">
+                      <label class="radio-type-country__label" for="Brazil">Бразилия</label>
+                    </li>
+                    <li class="radio-type-country___item">
+                      <input class="radio-type-country__input visually-hidden" id="ethiopia" name="country" type="checkbox" value="Эфиопия">
+                      <label class="radio-type-country__label" for="ethiopia">Эфиопия</label>
+                    </li>
+                    <li class="radio-type-country___item">
+                      <input class="radio-type-country__input visually-hidden" id="colombia"  name="country" type="checkbox" value="Колумбия" checked>
+                      <label class="radio-type-country__label" for="colombia">Колумбия</label>
+                    </li>
+                    <li class="radio-type-country___item">
+                      <input class="radio-type-country__input visually-hidden" id="costa-rica" name="country" type="checkbox" value="Коста-Рика">
+                      <label class="radio-type-country__label" for="costa-rica">Коста-Рика</label>
+                    </li>
+                    <li class="radio-type-country___item">
+                      <input class="radio-type-country__input visually-hidden" id="peru" name="country" type="checkbox" value="Перу" disabled>
+                      <label class="radio-type-country__label" for="peru">Перу</label>
+                    </li>
+                  </ul>
+              </fieldset>
 
-            <button class="filter__btn" type="submit">Применить фильтр</button>
-            <button class="filter__btn-white" type="reset">Сбросить фильтр</button>
-          </form>
-        </section>
-        <section class="catalog-items">
-          <div class="catalog-items-sorting-wrap">
-            <h2>Сортировка:</h2>
-            <ul class="catalog-items-sorting-list">
-              <li class="catalog-items-sorting-item catalog-items-sorting-item-activ"><a href="#">По цене</a></li>
-              <li class="catalog-items-sorting-item"><a href="#">По типу</a></li>
-              <li class="catalog-items-sorting-item"><a href="#">По функционалу</a></li>
-            </ul>
-            <ul class="sort-arr-wrap">
-              <li class="sort-arr sort-arr-active">
-                <a href="#" aria-label="по возростанию">
-                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5.5 0L11 10L0 10" fill="#C5C5C5"/>
-                  </svg>
-                </a>
-              </li>
-              <li class="sort-arr ">
-                <a href="#" aria-label="по убыванию">
-                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M5.5 10L0 0H11" fill="#C5C5C5"/>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <ul class="popular-item-list">
-            <li class="popular-item" tabindex="0">
-              <div class="popular-item-img">
-                <ul class="popular-item-hover-list">
-                  <li class="popular-item-hover-buy-btn popular-item-hover-buy">
-                    <a class="item-buy-btn" href="#">купить</a>
-                  </li>
-                  <li class="popular-item-hover-bookmark-btn popular-item-hover-bookmark"><a href="#">В закладки</a></li>
-                </ul>
-                <img src="img/BFG6000.jpg" width="144" height="128" alt="перфоратор BFG6000">
-              </div>
-              <div class="popular-list-wrap">
-                <p>Перфоратор BOSCH<br>BFG 6000</p>
-                <span>30500 Р.</span>
-                <div class="btn btn-price">
-                  25500 Р.
+              <button class="filter__btn" type="submit">Применить фильтр</button>
+              <button class="filter__btn-white" type="reset">Сбросить фильтр</button>
+            </form>
+          </section>
+          <section class="catalog-items">
+            <div class="catalog-items-sorting-wrap">
+              <h2>Сортировка:</h2>
+              <ul class="catalog-items-sorting-list">
+                <li class="catalog-items-sorting-item catalog-items-sorting-item-activ"><a href="#">По цене</a></li>
+                <li class="catalog-items-sorting-item"><a href="#">По типу</a></li>
+                <li class="catalog-items-sorting-item"><a href="#">По функционалу</a></li>
+              </ul>
+              <ul class="sort-arr-wrap">
+                <li class="sort-arr sort-arr-active">
+                  <a href="#" aria-label="по возростанию">
+                    <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5.5 0L11 10L0 10" fill="#C5C5C5"/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="sort-arr ">
+                  <a href="#" aria-label="по убыванию">
+                    <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5.5 10L0 0H11" fill="#C5C5C5"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="popular-item-list">
+              <li class="popular-item" tabindex="0">
+                <div class="popular-item-img">
+                  <ul class="popular-item-hover-list">
+                    <li class="popular-item-hover-buy-btn popular-item-hover-buy">
+                      <a class="item-buy-btn" href="#">купить</a>
+                    </li>
+                    <li class="popular-item-hover-bookmark-btn popular-item-hover-bookmark"><a href="#">В закладки</a></li>
+                  </ul>
+                  <img src="img/BFG6000.jpg" width="144" height="128" alt="перфоратор BFG6000">
                 </div>
-              </div>
-            </li>
-          </ul>
-
-          <ul class="pagination-list">
-            <li class="pagination-item pagination-item-current">
-              <a href="#">1</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">2</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">3</a>
-            </li>
-            <li class="pagination-item">
-              <a href="#">Следующая</a>
-            </li>
-          </ul>
-
-        </section>
-        </ы>
-
+                <div class="popular-list-wrap">
+                  <p>Перфоратор BOSCH<br>BFG 6000</p>
+                  <span>30500 Р.</span>
+                  <div class="btn btn-price">
+                    25500 Р.
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="pagination-list">
+              <li class="pagination-item pagination-item-current">
+                <a href="#">1</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">2</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">3</a>
+              </li>
+              <li class="pagination-item">
+                <a href="#">Следующая</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+      <section>
+        <h2 class="visually-hidden">Карта</h2>
+        <div class="map" id="map"></div>
+      </section>
     </main>
     <footer class="page-footer container">
       <h2 class="visually-hidden">подвал сайта.</h2>
@@ -429,7 +434,7 @@
       <div class="page-footer__bottom">
         <div class="page-footer__bottom-copyright">
           Разработано в
-          <a href="#" class="page-footer__bottom-logo-link" href="https://htmlacademy.org/" target="_blank">
+          <a class="page-footer__bottom-logo-link" href="https://htmlacademy.org/" target="_blank">
             &nbsp;HTML Academy&nbsp;
             <svg class="page-footer__htmlacademy"  width="112" height="16">
               <use xlink:href="img/icons/stack.svg#Academy-link"></use>
@@ -439,6 +444,8 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js" integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="./js/script.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js" integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/script.js" defer></script>
   </body>
 </html>
