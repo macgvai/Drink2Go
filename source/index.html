@@ -231,16 +231,16 @@
             <h2 class="visually-hidden">фильтр товаров</h2>
             <form class="filter" method="get" action="https://echo.htmlacademy.ru" >
               <fieldset class="filter__price">
-                <legend class="filter__heading">Цена:</legend>
+                <legend class="filter__legend">Цена</legend>
                 <div class="filter__range" id="slider"></div>
                   <div class="filter__price-controls">
                     <input class="filter__price-controls-input filter__price-controls-input--min" min="0" max="900" placeholder="0" type="number" value="0" id="input-0">
-                    <span>—</span>
+                    <div class="filter__inputs-dash"></div>
                     <input class="filter__price-controls-input filter__price-controls-input--max" min="0" max="900" placeholder="900" type="number" value="900" id="input-1">
                   </div>
               </fieldset>
               <fieldset class="radio-type-milk">
-                <legend class="radio-type-milk__legend">Наличие молока:</legend>
+                <legend class="radio-type-milk__legend">Наличие молока</legend>
                   <ul class="radio-type-milk___list">
                     <li class="radio-type-milk___item">
                       <input class="radio-type-milk__input visually-hidden" id="no-matter" name="milk" type="radio" value="Не важно">
@@ -286,13 +286,13 @@
                   </ul>
               </fieldset>
 
-              <button class="filter__btn" type="submit">Применить фильтр</button>
-              <button class="filter__btn-white" type="reset">Сбросить фильтр</button>
+              <button class="button filter__btn" type="submit">Применить фильтр</button>
+              <button class="button filter__btn-white" type="reset">Сбросить фильтр</button>
             </form>
           </section>
           <section class="catalog-items">
             <div class="catalog-items-sorting-wrap">
-              <h2>Сортировка:</h2>
+              <h2 class="visually-hidden">карточки товаров</h2>
               <ul class="catalog-items-sorting-list">
                 <li class="catalog-items-sorting-item catalog-items-sorting-item-activ"><a href="#">По цене</a></li>
                 <li class="catalog-items-sorting-item"><a href="#">По типу</a></li>
