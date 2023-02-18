@@ -227,16 +227,20 @@
             <h2 class="catalog__title">Каталог</h2>
             <p class="catalog__subtitle">Каталог кофейных напитков</p>
           </div>
-          <section>
+          <section class="filter-wrapper">
             <h2 class="visually-hidden">фильтр товаров</h2>
             <form class="filter" method="get" action="https://echo.htmlacademy.ru" >
               <fieldset class="filter__price">
                 <legend class="filter__legend">Цена</legend>
                 <div class="filter__range" id="slider"></div>
                   <div class="filter__price-controls">
-                    <input class="filter__price-controls-input filter__price-controls-input--min" min="0" max="900" placeholder="0" type="number" value="0" id="input-0">
+                    <label>
+                      <input class="filter__price-controls-input filter__price-controls-input--min" name="min-price" min="0" max="900" placeholder="0" type="number" value="0" id="input-0">
+                    </label>
                     <div class="filter__inputs-dash"></div>
-                    <input class="filter__price-controls-input filter__price-controls-input--max" min="0" max="900" placeholder="900" type="number" value="900" id="input-1">
+                    <label>
+                      <input class="filter__price-controls-input filter__price-controls-input--max" name="max-price" min="0" max="900" placeholder="900" type="number" value="900" id="input-1">
+                    </label>
                   </div>
               </fieldset>
               <fieldset class="radio-type-milk">
@@ -291,49 +295,162 @@
             </form>
           </section>
           <section class="catalog-items">
-            <div class="catalog-items-sorting-wrap">
-              <h2 class="visually-hidden">карточки товаров</h2>
-              <ul class="catalog-items-sorting-list">
-                <li class="catalog-items-sorting-item catalog-items-sorting-item-activ"><a href="#">По цене</a></li>
-                <li class="catalog-items-sorting-item"><a href="#">По типу</a></li>
-                <li class="catalog-items-sorting-item"><a href="#">По функционалу</a></li>
-              </ul>
-              <ul class="sort-arr-wrap">
-                <li class="sort-arr sort-arr-active">
-                  <a href="#" aria-label="по возростанию">
-                    <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M5.5 0L11 10L0 10" fill="#C5C5C5"/>
-                    </svg>
-                  </a>
-                </li>
-                <li class="sort-arr ">
-                  <a href="#" aria-label="по убыванию">
-                    <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M5.5 10L0 0H11" fill="#C5C5C5"/>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
+            <h2 class="visually-hidden">карточки товаров</h2>
+            <div class="catalog-items__sort-wrapper">
+              <span class="catalog-items__sort-text">Сортировка:</span>
+              <div class="catalog-items__select-wrapper">
+                <select class="catalog-items__select" name="sorting-values" id="sorting-values">
+                  <option class="catalog-items__control" value="default" selected>по умолчанию</option>
+                  <option class="catalog-items__control" value="expensive">сначала дорогие</option>
+                  <option class="catalog-items__control" value="cheap">сначала дешёвые</option>
+                  <option class="catalog-items__control" value="high-rating">высокий рейтинг</option>
+                </select>
+              </div>
             </div>
-            <ul class="popular-item-list">
-              <li class="popular-item" tabindex="0">
-                <div class="popular-item-img">
-                  <ul class="popular-item-hover-list">
-                    <li class="popular-item-hover-buy-btn popular-item-hover-buy">
-                      <a class="item-buy-btn" href="#">купить</a>
-                    </li>
-                    <li class="popular-item-hover-bookmark-btn popular-item-hover-bookmark"><a href="#">В закладки</a></li>
-                  </ul>
-                  <img src="img/BFG6000.jpg" width="144" height="128" alt="перфоратор BFG6000">
-                </div>
-                <div class="popular-list-wrap">
-                  <p>Перфоратор BOSCH<br>BFG 6000</p>
-                  <span>30500 Р.</span>
-                  <div class="btn btn-price">
-                    25500 Р.
-                  </div>
+            <ul class="product-list">
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
                 </div>
               </li>
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
+                </div>
+              </li>
+
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
+                </div>
+              </li>
+
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
+                </div>
+              </li>
+
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
+                </div>
+              </li>
+
+              <li class="product-list__item card">
+                <a class="card__link" href="#">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 320px)" srcset="img/catalog/yellow.webp 1x,
+                                  img/catalog/yellow@2x.webp 2x">
+                    <img src="img/catalog/yellow.png" srcset="img/catalog/yellow@2x.png 2x" alt="Фото товара"
+                      width="130" height="188">
+                  </picture>
+                </a>
+                <a class="card__title-link" href="#">
+                  <h3 class="card__title">Декаф Флэт Уайт</h3>
+                </a>
+                <p class="card__desc">Кофе без кофеина из Эфиопии<br> с натуральным фермерским молоком</p>
+                <div class="card__buy">
+                  <span class="card__price">225₽</span>
+                  <a class="button card__btn" href="#">
+                    <svg class="card__add-basket-icon">
+                      <use xlink:href="img/icons/stack.svg#add-basket"></use>
+                    </svg>
+                    В корзину
+                  </a>
+                </div>
+              </li>
+
             </ul>
             <ul class="pagination-list">
               <li class="pagination-item pagination-item-current">
