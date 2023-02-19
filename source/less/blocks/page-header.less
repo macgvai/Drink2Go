@@ -1,6 +1,10 @@
 .page-header {
   min-height: 60px;
   background-color: white;
+  @media (max-width: @only-mobile-width) {
+    box-shadow: 0px -3px 17px black;
+    z-index: 2;
+  }
   @media (min-width: @tablet-width) {
     display: flex;
     justify-content: space-between;

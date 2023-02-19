@@ -1,4 +1,4 @@
-/* в этот файл добавляет скрипты*/
+/* меню мобайл*/
 let navMain = document.querySelector('.main-nav');
 let navToggle = document.querySelector('.main-nav__toggle');
 

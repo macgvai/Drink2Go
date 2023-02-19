@@ -25,27 +25,17 @@
   color: @base-primary;
 }
 
-.pagination__item-next,
-.pagination__item-previous {
-  &::before {
-    content: "";
-    width: 6px;
-    height: 10px;
-    background: url("../../img/arr-pagination-prev.svg") no-repeat;
-  }
-  @media (min-width: @tablet-width) {
-    width: auto;
-    padding: 10px 20px;
-    &::before {
-      display: none;
-    }
-  }
+.pagination__item-img {
+  width: 6px;
+  height: auto;
+  fill: hsl(256deg,55%,58%);
 }
-.pagination__item-next {
-  &::before {
-    transform: rotate(180deg);
-  }
+
+.pagination__item-img-next {
+  transform: rotate(180deg);
 }
+
+
 
 .pagination__item-previous-text,
 .pagination__item-next-text {
