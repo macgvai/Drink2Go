@@ -8,15 +8,28 @@
   &:hover, :active, :focus {
     box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
   }
+  @media (min-width: @tablet-width) {
+    padding: 50px 30px 30px;
+    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }
 .card__link {
   margin-bottom: 19px;
   display: block;
   text-align: center;
+  @media (min-width: @tablet-width) {
+    margin-bottom: 27px;
+  }
 }
 .card__title-link {
   display: block;
   margin-bottom: 4px;
+  @media (min-width: @tablet-width) {
+    margin-bottom: 10px;
+  }
 }
 .card__title {
   font-family: 'Montserrat';
@@ -24,6 +37,11 @@
   font-size: 18px;
   line-height: 32px;
   margin: 0;
+  color: @base-black;
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
 .card__desc {
   margin: 0;
@@ -33,6 +51,9 @@
   line-height: 20px;
   color: @base-black;
   margin-bottom: 18px;
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 .card__buy {
   display: flex;
@@ -46,10 +67,15 @@
   color: @base-black;
 }
 .card__btn {
+  justify-content: space-between;
   width: 141px;
-  padding: 5px 22px 5px 20px;
+  padding: 8px 20px 8px 20px;
   font-size: 14px;
   line-height: 20px;
+
+  @media (min-width: @tablet-width) {
+    padding: 8px 22px 8px 20px;
+  }
 }
 .card__add-basket-icon {
   width: 20px;

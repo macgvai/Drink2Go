@@ -1,9 +1,16 @@
 .catalog-items {
+  @media (min-width: @desktop-width) {
+    grid-area: 2 / 2 / 3 / 5;
+  }
 }
 .catalog-items__sort-wrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 21px;
+  @media (min-width: @tablet-width) {
+    width: 282px;
+    margin-left: auto;
+  }
 }
 .catalog-items__sort-text {
   font-family: 'Montserrat';

@@ -1,6 +1,10 @@
 .pagination {
   display: flex;
   justify-content: space-between;
+  @media (min-width: @tablet-width) {
+    width: 395px;
+    margin-left: auto;
+  }
 }
 .pagination__item {
 }
@@ -32,6 +36,9 @@
   @media (min-width: @tablet-width) {
     width: auto;
     padding: 10px 20px;
+    &::before {
+      display: none;
+    }
   }
 }
 .pagination__item-next {
@@ -43,6 +50,9 @@
 .pagination__item-previous-text,
 .pagination__item-next-text {
   display: none;
+  @media (min-width: @tablet-width) {
+    display: block;
+  }
 }
 .pagination__item-current a {
   background: transparent;

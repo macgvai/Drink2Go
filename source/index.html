@@ -70,9 +70,9 @@
     <main class="page-main">
       <section class="promo">
         <h2 class="visually-hidden">гланый слайдер</h2>
-        <section class="slider swiper mySwiper container">
+        <section class="slider container swiper mySwiper">
           <ul class="slider__list swiper-wrapper">
-            <li class="slider__item slider__item--white swiper-slide">
+            <li class="slider__item slider__item--white swiper-slide container">
               <picture>
                 <source type="image/webp" media="(min-width: 1200px)" srcset="img/slider/desktop/white.webp 1x,
                             img/slider/desktop/white@2x.webp 2x">
@@ -104,7 +104,7 @@
                 </div>
               </div>
             </li>
-            <li class="slider__item slider__item--violet swiper-slide">
+            <li class="slider__item slider__item--violet swiper-slide container">
               <picture>
                 <source type="image/webp" media="(min-width: 1200px)" srcset="img/slider/desktop/violet.webp 1x,
                     img/slider/desktop/violet@2x.webp 2x">
@@ -134,7 +134,7 @@
                 </div>
               </div>
             </li>
-            <li class="slider__item slider__item--black swiper-slide">
+            <li class="slider__item slider__item--black swiper-slide container">
               <picture>
                 <source type="image/webp" media="(min-width: 1200px)" srcset="img/slider/desktop/black.webp 1x,
                             img/slider/desktop/black@2x.webp 2x">
@@ -177,7 +177,7 @@
         </section>
 
       </section>
-      <section class="features">
+      <section class="features container">
         <div class="features__wrapper container">
           <h2 class="features__title">Преимущества</h2>
           <h3 class="features__subtitle">Главные причины выбрать Drink2Go</h3>
@@ -222,7 +222,7 @@
         </div>
       </section>
       <section class="catalog">
-        <div class="container">
+        <div class="container catalog__grid">
             <div class="catalog__header">
             <h2 class="catalog__title">Каталог</h2>
             <p class="catalog__subtitle">Каталог кофейных напитков</p>
@@ -289,9 +289,10 @@
                     </li>
                   </ul>
               </fieldset>
-
-              <button class="button filter__btn" type="submit">Применить фильтр</button>
-              <button class="button filter__btn-white" type="reset">Сбросить фильтр</button>
+              <div class="filter__btn-wrapper">
+                <button class="button filter__btn" type="submit">Применить фильтр</button>
+                <button class="button filter__btn-white" type="reset">Сбросить фильтр</button>
+              </div>
             </form>
           </section>
           <section class="catalog-items">
