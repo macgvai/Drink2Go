@@ -13,7 +13,7 @@
   }
 
   @media (min-width: @desktop-width) {
-    padding: 101px 20px 0;
+    padding: 101px 0 0;
   }
 }
 
@@ -25,6 +25,9 @@
   text-transform: uppercase;
   margin: 0;
   padding-bottom: 5px;
+  @media (min-width: @desktop-width) {
+    letter-spacing: 0.04em;
+  }
 }
 
 .features__subtitle {
@@ -58,12 +61,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 27px;
     grid-row-gap: 45px;
-    padding: 55px 27px 101px;
+    padding: 55px 9px 101px;
   }
 
   @media (min-width: @desktop-width) {
     grid-template-columns: repeat(4, 1fr);
-    padding: 77px 0 125px;
+    padding: 69px 0 119px;
   }
 }
 
@@ -85,13 +88,14 @@
   }
 }
 
+
 .features__heading {
   font-family: 'Montserrat';
   font-size: 18px;
   font-weight: 600;
   line-height: 32px;
   margin: 0;
-  padding: 5px 0 5px;
+  padding: 9px 0 5px;
 
   @media (min-width: @tablet-width) {
     font-size: 24px;
@@ -131,7 +135,7 @@
   height: 56px;
 
   @media (min-width: @tablet-width) {
-    width: 103px;
+    width: 52px;
   }
 }
 
@@ -147,11 +151,24 @@
 
 .features__item-img {
   @media (min-width: @tablet-width) {
-    padding: 8px 0 0 2px;
   }
 
   @media (min-width: @desktop-width) {
-    padding-top: 0;
-    padding-bottom: 20px;
+
   }
+}
+
+.features__speed-icon--wrapper {
+  width: 52px;
+  height: 56px;
+  margin-top: 8px;
+  margin: 0 auto;
+  @media (min-width: @tablet-width) {
+    margin: 0;
+    margin-top: 8px;
+  }
+  @media (min-width: @desktop-width) {
+    margin-bottom: 21px;
+  }
+
 }

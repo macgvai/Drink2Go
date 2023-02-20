@@ -11,7 +11,7 @@
 
 .pagination__item-link {
   display: flex;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   padding: 10px;
   background: @white;
@@ -28,14 +28,22 @@
 .pagination__item-img {
   width: 6px;
   height: auto;
-  fill: hsl(256deg,55%,58%);
+  fill: @base-primary;
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
 }
 
 .pagination__item-img-next {
   transform: rotate(180deg);
 }
 
-
+.pagination__item-previous,
+.pagination__item-next {
+  @media (min-width: @tablet-width) {
+    padding: 8px 20px;
+  }
+}
 
 .pagination__item-previous-text,
 .pagination__item-next-text {
