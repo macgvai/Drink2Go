@@ -3,70 +3,87 @@
   padding: 40px 19px 20px;
   margin-bottom: 20px;
   min-height: 420px;
-  &:last-child {
-    margin-bottom: 41px;
-  }
-  &:hover, :active, :focus {
+
+  &:hover,
+  &:active,
+  &:focus {
     box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
   }
+
+  &:last-child {
+    margin-bottom: 41px;
+
+    @media (min-width: @tablet-width) {
+      margin-bottom: 0;
+    }
+  }
+
   @media (min-width: @tablet-width) {
     padding: 50px 30px 30px;
     margin-bottom: 0;
-    &:last-child {
-      margin-bottom: 0px;
-    }
   }
 }
+
 .card__link {
   margin-bottom: 19px;
   display: block;
   text-align: center;
+
   @media (min-width: @tablet-width) {
-    margin-bottom: 27px;
+    margin-bottom: 23px;
   }
 }
+
 .card__title-link {
   display: block;
   margin-bottom: 4px;
+
   @media (min-width: @tablet-width) {
     margin-bottom: 10px;
   }
 }
+
 .card__title {
-  font-family: 'Montserrat';
+
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
   margin: 0;
   color: @base-black;
+
   @media (min-width: @tablet-width) {
     font-size: 24px;
     line-height: 36px;
   }
 }
+
 .card__desc {
   margin: 0;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: @base-black;
   margin-bottom: 16px;
+
   @media (min-width: @tablet-width) {
     margin-bottom: 20px;
   }
 }
+
 .card__buy {
   display: flex;
   justify-content: space-between;
 }
+
 .card__price {
-  font-family: 'Montserrat';
+
   font-weight: 600;
   font-size: 20px;
   line-height: 32px;
   color: @base-black;
 }
+
 .card__btn {
   justify-content: space-between;
   width: 141px;
@@ -78,6 +95,7 @@
     padding: 8px 22px 8px 20px;
   }
 }
+
 .card__add-basket-icon {
   width: 20px;
   height: 16px;

@@ -1,39 +1,40 @@
 .page-footer {
   padding-top: 20px;
+
   @media (min-width: @tablet-width) {
     padding-top: 42px;
   }
+
   @media (min-width: @desktop-width) {
     display: grid;
     grid-template-columns: 318px 1fr;
   }
 }
+
 .page-footer__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 19px;
+
   @media (min-width: @desktop-width) {
     display: block;
   }
 }
-.page-footer__header-logo-wrapper {
-}
-.page-footer__header-logo {
-}
-.page-footer__logo-image {
-}
+
 .page-footer__header-logo-text {
   display: none;
+
   @media (min-width: @desktop-width) {
     display: block;
     width: 126px;
     margin: 2px 0 0 20px;
-    font-family: 'Montserrat';
+
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     color: @base-black;
   }
+
   @media (min-width: @desktop-width) {
     font-size: 14px;
     line-height: 20px;
@@ -42,6 +43,7 @@
     margin-top: 6px;
   }
 }
+
 .page-footer__main {
   @media (min-width: @tablet-width) {
     display: grid;
@@ -49,83 +51,92 @@
     grid-gap: 30px;
   }
 }
+
 .page-footer__store {
-  border-top: 1px solid @secondary-base ;
+  border-top: 1px solid @secondary-base;
   border-bottom: 1px solid @secondary-base;
   margin: 0 -20px;
   padding: 0 20px;
   min-height: 214px;
+
   @media (min-width: @tablet-width) {
     border: none;
     min-height: 146px;
   }
+
   @media (min-width: @desktop-width) {
     margin: 0;
     padding: 0 31px;
   }
 }
+
 .page-footer__store-title,
 .page-footer__media-title,
 .page-footer__contacts-title {
-  font-family: 'Montserrat';
+
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
   color: @base-primary;
   margin-top: 20px;
+
   @media (min-width: @tablet-width) {
     margin-top: 10px;
   }
 }
 
-.page-footer__store-list {
-}
 .page-footer__store-item,
 .page-footer__media-item {
   margin-top: 17px;
   margin-bottom: 18px;
 }
+
 .page-footer__store-link,
 .page-footer__media-link {
-  font-family: 'Montserrat';
+
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: @base-black;
+
+  &:hover {
+    color: @secondary-primary;
+  }
+
+  &:active {
+    color: @alt-primary-darker;
+  }
 }
+
 .page-footer__media {
   border-bottom: 1px solid @secondary-base;
   margin: 0 -20px;
   padding: 0 20px;
   min-height: 157px;
+
   @media (min-width: @tablet-width) {
     border: none;
   }
+
   @media (min-width: @desktop-width) {
     margin: 0;
     padding: 0 10px;
   }
 }
-.page-footer__media-title {
-}
-.page-footer__media-list {
-}
-.page-footer__media-item {
-}
 
-.page-footer__footer__media-link {
-}
 .page-footer__contacts {
   border-bottom: 1px solid @secondary-base;
   margin: 0 -20px;
   padding: 0 20px;
   min-height: 136px;
+
   @media (min-width: @tablet-width) {
     border: none;
   }
+
   @media (min-width: @desktop-width) {
     margin: 0;
     padding: 0 10px;
@@ -134,13 +145,14 @@
 
 .page-footer__contacts-adress {
   position: relative;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: @base-black;
   margin-top: 20px;
   padding-left: 19px;
+
   &::before {
     content: "";
     position: absolute;
@@ -151,16 +163,18 @@
     background: url("../../img/address.svg") no-repeat;
   }
 }
+
 .page-footer__contacts-phone {
   position: relative;
   display: block;
   margin-top: 15px;
   padding-left: 19px;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: @base-black;
+
   &::before {
     content: "";
     position: absolute;
@@ -171,38 +185,61 @@
     background: url("../../img/Phone.svg") no-repeat;
   }
 }
+
 .page-footer__bottom {
   min-height: 66px;
-  padding: 18px 37px;
+  padding: 18px 35px;
   text-align: center;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   color: @base-grey;
+
   @media (min-width: @tablet-width) {
     width: 282px;
     margin: 0 auto;
   }
+
   @media (min-width: @desktop-width) {
     grid-area: 2 / 1 / 3 / 3;
     padding-top: 10px;
   }
 }
+
 .page-footer__bottom-copyright {
   display: flex;
 }
+
 .page-footer__bottom-logo-link {
   display: flex;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   color: @base-grey;
+
+  &:hover,
+  &:focus {
+    color: @base-primary;
+  }
+
+  &:active {
+    color: @alt-primary-darker;
+  }
 }
 
 .page-footer__htmlacademy {
-  width: 12px;
+  width: 14px;
   height: 16px;
   fill: @base-grey;
+}
+
+.page-footer__bottom-logo-link:focus .page-footer__htmlacademy,
+.page-footer__bottom-logo-link:hover .page-footer__htmlacademy {
+  fill: @base-primary;
+}
+
+.page-footer__bottom-logo-link:active .page-footer__htmlacademy {
+  fill: @alt-primary-darker;
 }

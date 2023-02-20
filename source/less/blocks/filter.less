@@ -6,7 +6,8 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -20,25 +21,58 @@ input[type=number] {
 }
 
 .noUi-horizontal .noUi-handle {
+  display: flex;
   width: 24px;
   height: 24px;
   right: -11px;
   top: calc(50% - 24px/2 + 0.45px);
-  background: #FFFFFF;
-  border: 2px solid #9070EC;
+  background: @white;
+  border: 2px solid @secondary-primary;
   border-radius: 50%;
-  &::before, &::after {
+  cursor: pointer;
+
+  &::before,
+  &::after {
     display: none;
   }
 }
 
+.filter__range:disabled .noUi-handle {
+  border: 2px solid @base-grey;
+}
+
+.noUi-handle:hover .noUi-touch-area,
+.noUi-handle:focus .noUi-touch-area {
+  background-color: rgba(120, 89, 207, 0.25);
+  border-radius: 50%;
+  top: 6px;
+  margin: 0 auto;
+  padding-top: 10px;
+  align-self: center;
+  height: 70%;
+  width: 70%;
+}
+
+.noUi-handle:active .noUi-touch-area {
+  background-color: @base-primary;
+  border-radius: 50%;
+  top: 6px;
+  margin: 0 auto;
+  padding-top: 10px;
+  align-self: center;
+  height: 70%;
+  width: 70%;
+}
+
 .filter {
   padding-top: 20px;
+
   @media (min-width: @tablet-width) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 12px;
   }
+
   @media (min-width: @desktop-width) {
     display: block;
     padding-top: 0;
@@ -47,9 +81,11 @@ input[type=number] {
 
 .filter-wrapper {
   margin-bottom: 39px;
+
   @media (min-width: @tablet-width) {
     margin-bottom: 45px;
   }
+
   @media (min-width: @desktop-width) {
     grid-area: 2 / 1 / 3 / 2;
     padding-right: 23px;
@@ -65,13 +101,14 @@ input[type=number] {
 
 .filter__price {
   margin-bottom: 24px;
+
   @media (min-width: @desktop-width) {
     margin-bottom: 28px;
   }
 }
 
 .filter__legend {
-  font-family: 'Montserrat';
+
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -81,13 +118,14 @@ input[type=number] {
 }
 
 .radio-type-milk__legend {
-  font-family: 'Montserrat';
+
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   padding: 0;
   margin-bottom: 24px;
+
   @media (min-width: @desktop-width) {
     margin-bottom: 19px;
   }
@@ -95,60 +133,64 @@ input[type=number] {
 
 .filter__range {
   margin-bottom: 36px;
+
   @media (min-width: @tablet-width) {
-    margin: 0 10px 31px;
+    margin: 0px 10px 31px;
   }
+
   @media (min-width: @desktop-width) {
-    margin: 0 0px 30px;
+    margin: 0px 0px 30px;
   }
 }
+
 .filter__price-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   @media (min-width: @tablet-width) {
     padding: 0 9px;
   }
+
   @media (min-width: @desktop-width) {
     padding: 0;
   }
 }
+
 .filter__price-controls-input {
   width: 118px;
   padding: 5px 10px;
   background: @white;
   border: 2px solid @secondary-primary;
   border-radius: 4px;
-  font-family: 'Montserrat';
+
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: @base-black;
+
   @media (min-width: @tablet-width) {
     width: 93px;
   }
+
   @media (min-width: @desktop-width) {
     width: 132px;
     padding: 8px 15px;
   }
 }
+
 .filter__inputs-dash {
   width: 9px;
   height: 2px;
   background: @base-grey;
 }
 
-.filter__price-controls-input--min {
-}
-.filter__price-controls-input--max {
-}
-
-
 .filter__btn,
 .filter__btn-white {
   width: 160px;
   margin: 0 auto;
+
   @media (min-width: @tablet-width) {
     padding: 8px 3px;
     margin: 0;
@@ -159,35 +201,50 @@ input[type=number] {
 
 .filter__btn {
   margin-bottom: 27px;
+
   @media (min-width: @tablet-width) {
     margin: 0;
     width: 148px;
   }
+
+  @media (min-width: @desktop-width) {
+    font-size: 15px;
+  }
 }
+
 .filter__btn-white {
   background-color: @white;
   color: @base-primary;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+
   @media (min-width: @tablet-width) {
     width: 139px;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   @media (min-width: @desktop-width) {
     width: 148px;
+    font-size: 15px;
+  }
+
+  &:hover,
+  &:focus {
+    color: @white;
   }
 }
 
 .filter__btn-wrapper {
   @media (min-width: @tablet-width) {
-  grid-area: 2 / 1 / 4 / 4;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 179px;
-  padding-right: 233px;
+    grid-area: 2 / 1 / 4 / 4;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 179px;
+    padding-right: 233px;
   }
+
   @media (min-width: @desktop-width) {
     padding: 0;
   }

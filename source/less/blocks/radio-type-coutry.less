@@ -3,31 +3,32 @@
   margin: 0;
   padding: 0;
   margin-bottom: 16px;
+
   @media (min-width: @tablet-width) {
     margin-bottom: 19px;
   }
+
   @media (min-width: @desktop-width) {
     margin-bottom: 18px;
   }
 }
+
 .radio-type-country__legend {
-  font-family: 'Montserrat';
+
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: @base-black;
   margin-bottom: 21px;
 }
-.radio-type-country___list {
-}
+
 .radio-type-country___item {
   margin-bottom: 20px;
 }
-.radio-type-country__input {
-}
+
 .radio-type-country__label {
   position: relative;
-  font-family: 'Montserrat';
+
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -36,37 +37,48 @@
   display: block;
   cursor: pointer;
   user-select: none;
+
   @media (min-width: @desktop-width) {
     margin-left: 52px;
   }
 }
 
-.radio-type-country__input +.radio-type-country__label::before {
+.radio-type-country__input + .radio-type-country__label::before {
   content: "";
   position: absolute;
   top: 0px;
   left: -54px;
   width: 42px;
-  height: 24px;
-  background-image: url(../../img/toggle-off.svg);
+  height: 28px;
+  background-image: url("../../img/toggle-off.svg");
   background-repeat: no-repeat;
-  transition: .3s;
+  transition: 0.3s;
 }
-.radio-type-country__input:checked +.radio-type-country__label::before {
+
+.radio-type-country__input:checked + .radio-type-country__label::before {
   content: "";
-  background-image: url(../../img/toggle-on.svg);
+  background-image: url("../../img/toggle-on.svg");
   background-repeat: no-repeat;
-  transition: .3s;
+  transition: 0.3s;
 }
-
-
-
 
 .radio-type-country__input:hover + .radio-type-country__label::before,
 .radio-type-country__input:focus + .radio-type-country__label::before {
+  content: "";
+  background-image: url("../../img/toggle-hover.svg");
+  background-repeat: no-repeat;
+  transition: 0.3s;
   opacity: 1;
 }
 
 .radio-type-country__input:disabled + .radio-type-country__label::before {
-  opacity: .5;
+  content: "";
+  background-image: url("../../img/toggle-disabled.svg");
+  background-repeat: no-repeat;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.radio-type-country__input:disabled + .radio-type-country__label {
+  color: @base-grey;
 }

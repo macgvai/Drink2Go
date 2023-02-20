@@ -5,6 +5,7 @@
     justify-content: space-between;
     margin-left: 67px;
   }
+
   @media (min-width: @desktop-width) {
     width: 479px;
     margin-left: 162px;
@@ -19,6 +20,7 @@
   position: absolute;
   top: 22px;
   right: 82px;
+
   @media (min-width: @tablet-width) {
     position: relative;
     order: 1;
@@ -27,29 +29,32 @@
     width: 76px;
     margin-right: 40px;
   }
+
   @media (min-width: @desktop-width) {
     width: 261px;
     margin-right: 0;
   }
 }
-.main-nav__account-user {
-}
+
 .main-nav__account-user-link,
 .main-nav__account-user-cart-link {
   @media (min-width: @tablet-width) {
     display: flex;
     padding: 32px 20px;
   }
-}
-.main-nav__account-cart {
+
+  &:active {
+    background-color: @secondary-base;
+  }
 }
 
 .main-nav__account-user-descr,
 .main-nav__account-user-cart-descr {
   display: none;
+
   @media (min-width: @desktop-width) {
     display: block;
-    font-family: 'Montserrat';
+
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
@@ -59,16 +64,21 @@
   }
 }
 
-
 .main-nav__account-user-icon,
 .main-nav__account-user-cart-icon {
   fill: @base-black;
   width: 16px;
   height: 16px;
-  &:hover,
-  &:focus {
-    fill: @base-primary;
-  }
+}
+
+.main-nav__account-user-link:hover .main-nav__account-user-descr,
+.main-nav__account-user-cart-link:hover .main-nav__account-user-cart-descr {
+  color: @base-primary;
+}
+
+.main-nav__account-user-link:hover .main-nav__account-user-icon,
+.main-nav__account-user-cart-link:hover .main-nav__account-user-cart-icon {
+  fill: @base-primary;
 }
 
 .main-nav__toggle {
@@ -80,8 +90,13 @@
   background-color: transparent;
   cursor: pointer;
   border: none;
+
   @media (min-width: @tablet-width) {
     display: none;
+  }
+
+  &:active {
+    background-color: @secondary-base;
   }
 }
 
@@ -97,8 +112,8 @@
     left: 0;
     width: 16px;
     height: 1px;
-    background-color: #333;
-    box-shadow: 0 5px 0 0#333,0 10px 0 0#333;
+    background-color: @base-black;
+    box-shadow: 0 5px 0 0 @base-black, 0 10px 0 0 @base-black;
   }
 }
 
@@ -113,9 +128,11 @@
     height: 1px;
     background-color: @base-black;
   }
+
   &::before {
     transform: rotate(45deg);
   }
+
   &::after {
     transform: rotate(-45deg);
   }
@@ -133,11 +150,13 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
   @media (min-width: @tablet-width) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   @media (min-width: @desktop-width) {
     width: 459px;
   }
@@ -148,6 +167,7 @@
   margin-left: -20px;
   margin-right: -20px;
   text-align: center;
+
   @media (min-width: @tablet-width) {
     border: none;
     margin: 0;
@@ -158,30 +178,34 @@
   display: block;
   padding: 22px;
   padding-top: 21px;
-  font-family: 'Montserrat';
+
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  color: @base-primary;
+  color: @base-black;
+
   &:hover,
   &:focus-within {
+    color: @base-primary;
     opacity: 0.8;
   }
+
   &:active {
-    opacity: 0.6;
+    background: @secondary-base;
   }
+
   @media (min-width: @tablet-width) {
     padding: 32px 21px;
     font-weight: 500;
     font-size: 12px;
   }
+
   @media (min-width: @desktop-width) {
-    font-size: 20px;
-    color: @base-black;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    color: @base-black;
   }
 }
 
@@ -191,13 +215,16 @@
 
 .main-nav__item--current {
   position: relative;
+
   &:hover,
   &:focus-within {
     opacity: 0.8;
   }
+
   &:active {
     opacity: 0.6;
   }
+
   @media (min-width: @tablet-width) {
     &::after {
       content: "";
@@ -209,10 +236,12 @@
       background-color: @base-primary;
     }
   }
+
   @media (min-width: @desktop-width) {
     border-color: @white;
+
     .main-nav__item-link {
-      color: @base-primary;;
+      color: @base-primary;
     }
   }
 }
@@ -236,9 +265,10 @@
 
 @media (max-width: @only-mobile-width) {
   .main-nav--closed .main-nav__list {
-      display: none;
-    }
+    display: none;
+  }
+
   .main-nav--nojs .main-nav__toggle {
     display: none;
-    }
+  }
 }

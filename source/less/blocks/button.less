@@ -6,7 +6,6 @@
   padding: 10px 12px;
   background-color: @base-primary;
   border-radius: 4px;
-  font-family: 'Montserrat';
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
@@ -14,4 +13,20 @@
   color: @white;
   cursor: pointer;
   border: none;
+
+  &:hover,
+  &:focus {
+    background-color: @secondary-primary;
+    transition: 0.3ms;
+  }
+
+  &:active {
+    background-color: @alt-primary-darker;
+    transition: 0.3ms;
+  }
+
+  &:disabled {
+    background: @base-grey;
+    transition: 0.3ms;
+  }
 }
